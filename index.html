@@ -15,31 +15,55 @@
   </head>
   <body>
     <div class="framework-container">
-      <form id="search-city">
-        <div class="search-engine">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-10">
-                <input
-                  type="text"
-                  name="city"
-                  id="city-name"
-                  placeholder="Enter city name"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="col-2">
-                <button type="button" class="btn" id="search-button">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <button type="button" class="btn" id="current-location">
-                  <i class="fa-solid fa-location-dot"></i>
-                </button>
-              </div>
-            </div>
+      <div class="title-container">
+        <h1>San Pedro, PH</h1>
+        <div id="date">Sunday, March 12</div>
+        <div id="time">7:00 a.m.</div>
+      </div>
+      <div class="temparature-container">
+        <div class="icon-container">
+          <img
+            src="src/image/sun-behind-large-cloud_1f325-fe0f.png"
+            alt="cloudy"
+          />
+          CLOUDY
+        </div>
+        <div class="temperature-container">
+          <div class="temperature">
+            0
+          </div>
+          <div>
+            °
           </div>
         </div>
+        <button class="celsius">
+          C
+        </button>
+        <div class="separator">
+          │
+        </div>
+        <button class="fahrenheit">
+          F
+        </button>
+      </div>
+
+      <form id="city-form">
+      <div class="row">
+          <div class="col-6">
+        <input
+          type="text"
+          id="city-search"
+          placeholder="Type another city..."
+        />
+          </div>
+          <div class="col-3">
+        <input type="submit" value="Search" />
+      </div>
+      <div class="col-3">
+          <button id="current-button" >Current</button>
+        </div>
       </form>
+
 
 <div class="title-container">
         <h1>San Pedro, PH</h1>
