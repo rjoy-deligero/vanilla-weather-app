@@ -6,6 +6,10 @@
   border-radius: 10px;
 }
 
+#city-name {
+  width: 100%;
+}
+
 .btn {
   margin-top: 0;
   font-size: 22px;
