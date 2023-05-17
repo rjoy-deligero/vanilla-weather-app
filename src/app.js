@@ -37,10 +37,10 @@ let currentMinutes = now.getMinutes();
 
 let timeFormat = "";
 if (currentHour >= 12) {
-  timeFormat = "p.m.";
+  timeFormat = "PM";
   currentHour = currentHour - 12;
 } else {
-  timeFormat = "a.m.";
+  timeFormat = "AM";
 }
 let time = document.querySelector("#time");
 time.innerHTML = `${currentHour}:${currentMinutes} ${timeFormat}`;
