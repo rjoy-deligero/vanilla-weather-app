@@ -1,31 +1,46 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+let now = new Date();
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let currentDay = days[now.getDay()];
+console.log(currentDay);
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let currentMonth = months[now.getMonth()];
+
+let day = document.querySelector("#date");
+day.innerHTML = `${currentDay}, ${currentMonth} ${now.getDate()}`;
+
+let currentHour = now.getHours();
+
+let currentMinutes = now.getMinutes();
+
+let timeFormat = "";
+if (currentHour >= 12) {
+  timeFormat = "p.m.";
+  currentHour = currentHour - 12;
+} else {
+  timeFormat = "a.m.";
 }
-
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[day];
-}
+let time = document.querySelector("#time");
+time.innerHTML = `${currentHour}:${currentMinutes} ${timeFormat}`;
