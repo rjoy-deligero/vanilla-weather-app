@@ -13,7 +13,11 @@
   padding: 5px 5px 10px 5px;
 }
 
-.wind-details {
+.degree-details {
+  font-size: 25px;
+}
+
+.details-container {
   margin-top: 100px;
 }
 
