@@ -10,7 +10,6 @@ let days = [
   "Saturday",
 ];
 let currentDay = days[now.getDay()];
-console.log(currentDay);
 
 let months = [
   "January",
@@ -32,13 +31,8 @@ let day = document.querySelector("#date");
 day.innerHTML = `${currentDay}, ${currentMonth} ${now.getDate()}`;
 
 let currentHour = now.getHours();
-if (currentHour < 10) {
-  currentHour = `0${currentHour}`;
-}
+
 let currentMinutes = now.getMinutes();
-if (currentMinutes < 10) {
-  currentMinutes = `0${currentMinutes}`;
-}
 
 let timeFormat = "";
 if (currentHour >= 12) {
@@ -46,6 +40,12 @@ if (currentHour >= 12) {
   currentHour = currentHour - 12;
 } else {
   timeFormat = "AM";
+}
+if (currentHour < 10) {
+  currentHour = `0${currentHour}`;
+}
+if (currentMinutes < 10) {
+  currentMinutes = `0${currentMinutes}`;
 }
 let time = document.querySelector("#time");
 time.innerHTML = `${currentHour}:${currentMinutes} ${timeFormat}`;
