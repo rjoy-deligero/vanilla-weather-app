@@ -33,7 +33,7 @@ day.innerHTML = `${currentDay}, ${currentMonth} ${now.getDate()}`;
 
 let currentHour = now.getHours();
 if (currentHour < 10) {
-  currentHour = `0${urrentHour}`;
+  currentHour = `0${currentHour}`;
 }
 let currentMinutes = now.getMinutes();
 if (currentMinutes < 10) {
