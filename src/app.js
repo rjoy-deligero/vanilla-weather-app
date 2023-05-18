@@ -32,8 +32,13 @@ let day = document.querySelector("#date");
 day.innerHTML = `${currentDay}, ${currentMonth} ${now.getDate()}`;
 
 let currentHour = now.getHours();
-
+if (currentHour < 10) {
+  currentHour = `0${hours}`;
+}
 let currentMinutes = now.getMinutes();
+if (currentMinutes < 10) {
+  currentMinutes = `0${minutes}`;
+}
 
 let timeFormat = "";
 if (currentHour >= 12) {
