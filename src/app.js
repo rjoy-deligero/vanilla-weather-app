@@ -106,10 +106,10 @@ function displayTemperature(response) {
   city.innerHTML = `${response.data.city}, ${response.data.country}`;
   weatherIcon.src = response.data.condition.icon_url;
   weather.innerHTML = response.data.condition.description;
-  temperature.innerHTML = temperatureValue;
   wind.innerHTML = `${Math.round(response.data.wind.speed * 3.6)} km/h`;
   humidity.innerHTML = response.data.temperature.humidity;
   pressure.innerHTML = response.data.temperature.pressure;
+  onclickCelsius();
 }
 
 function onclickCelsius() {
