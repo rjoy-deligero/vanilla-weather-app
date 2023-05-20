@@ -6,6 +6,9 @@
   border-radius: 10px;
 }
 
+.search-input {
+  margin-top: 8px;
+}
 .btn {
   margin-top: 0;
   font-size: 22px;
@@ -15,12 +18,27 @@
 
 .degree-details {
   font-size: 25px;
+  text-transform: capitalize;
+  display: flex;
 }
 
 .wind-details {
-  margin-top: 100px;
+  margin-top: 36px;
 }
 
 #city-search {
   width: 100%;
+}
+
+#weatherIcon {
+  width: 170px;
+}
+
+.wheather-information {
+  margin-top: 28px;
+  margin-left: 50px;
+}
+
+.active {
+  color: blueviolet;
 }
