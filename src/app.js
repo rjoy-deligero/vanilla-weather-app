@@ -93,6 +93,7 @@ function displayWeather() {
   }
   let time = document.querySelector("#time");
   time.innerHTML = `${currentHour}:${currentMinutes} ${timeFormat}`;
+  navigator.geolocation.getCurrentPosition(getForecast);
 }
 
 function handleSubmit(event) {
@@ -110,6 +111,11 @@ function displayTemperature(response) {
   humidity.innerHTML = response.data.temperature.humidity;
   pressure.innerHTML = response.data.temperature.pressure;
   onclickCelsius();
+  console.log(response);
+  getSearchForecast(
+    response.data.coordinates.latitude,
+    response.data.coordinates.longitude
+  );
 }
 
 function onclickCelsius() {
@@ -122,4 +128,46 @@ function onclickFahrenheit() {
   document.getElementById("celsius-label").classList.remove("active");
   document.getElementById("fahrenheit-label").classList.add("active");
   temperature.innerHTML = Math.round(temperatureValue * 1.8) + 32;
+}
+
+function getSearchForecast(lat, lon) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayForecast);
+}
+
+function getForecast(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let dailyForecast = response.data.daily;
+  dailyForecast.forEach(function (day, index) {
+    if (index !== 0) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+      <div class="center">${formatDate(day.time)}</div>
+      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+        day.condition.icon
+      }.png"
+       alt="${day.condition.icon}">
+       <div class="center">${Math.round(day.temperature.day)}°C/
+       <span class="active">
+       ${Math.round(day.temperature.day * 1.8) + 32}°F</span></div>
+       </div>`;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
