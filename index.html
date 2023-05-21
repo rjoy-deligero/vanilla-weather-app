@@ -14,73 +14,76 @@
 </head>
 
 <body>
-  <div class="framework-container">
-    <form id="city-form">
-      <div class="search-engine">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-10 search-input">
-              <input type="text" name="city" id="city-search" placeholder="Enter city name" autocomplete="off" />
+    <div class="framework-container">
+      <form id="city-form">
+        <div class="search-engine">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-10 search-input">
+                <input type="text" name="city" id="city-search" placeholder="Enter city name" autocomplete="off" />
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn" id="searchButton">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="btn" id="currentLocation">
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
+              </div>
             </div>
-            <div class="col-2">
-              <button type="button" class="btn" id="searchButton">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <button type="button" class="btn" id="currentLocation">
-                <i class="fa-solid fa-location-dot"></i>
-              </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="title-container">
+        <h1 id="cityName">San Pedro, PH</h1>
+        <div id="date">Sunday, March 12</div>
+        <div id="time">7:00 a.m.</div>
+      </div>
+      <div class="temperature-container">
+        <div class="row">
+          <div class="col-8 degree-details">
+            <span class="icon-container">
+              <img id="weatherIcon" src="src/image/sun-behind-large-cloud_1f325-fe0f.png" alt="cloudy" />
+            </span>
+            <div class="wheather-information">
+              <span id="weather">CLOUDY </span>
+              <div>
+                <span class="temperature"><strong>0</strong></span>
+                <span> ° </span>
+                <button type="button" class="btn" id="celsius">
+                  <i id="celsius-label" class="fa-solid fa-c active"></i>
+                </button>
+                <span class="separator"> │ </span>
+                <button type="button" class="btn" id="fahrenheit">
+                  <i id="fahrenheit-label" class="fa-solid fa-f"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 wind-details">
+            <div>Wind:
+              <span id="wind"></span>
+            </div>
+            <div>Humidity:
+              <span id="humidity"></span>
+            </div>
+            <div>Pressure:
+              <span id="pressure"></span>
             </div>
           </div>
         </div>
       </div>
-    </form>
+      <hr />
+      <div class="container-tomorrow" id="forecast">
 
-    <div class="title-container">
-      <h1 id="cityName">San Pedro, PH</h1>
-      <div id="date">Sunday, March 12</div>
-      <div id="time">7:00 a.m.</div>
-    </div>
-    <div class="temperature-container">
-      <div class="row">
-        <div class="col-8 degree-details">
-          <span class="icon-container">
-            <img id="weatherIcon" src="src/image/sun-behind-large-cloud_1f325-fe0f.png" alt="cloudy" />
-          </span>
-          <div class="wheather-information">
-            <span id="weather">CLOUDY </span>
-            <div>
-              <span class="temperature"><strong>0</strong></span>
-              <span> ° </span>
-              <button type="button" class="btn" id="celsius">
-                <i id="celsius-label" class="fa-solid fa-c active"></i>
-              </button>
-              <span class="separator"> │ </span>
-              <button type="button" class="btn" id="fahrenheit">
-                <i id="fahrenheit-label" class="fa-solid fa-f"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-4 wind-details">
-          <div>Wind:
-            <span id="wind"></span>
-          </div>
-          <div>Humidity:
-            <span id="humidity"></span>
-          </div>
-          <div>Pressure:
-            <span id="pressure"></span>
-          </div>
-        </div>
       </div>
+      <script src="src/app.js"></script>
     </div>
-    <hr />
-    <div class="container-tomorrow" id="forecast">
 
-    </div>
-    <script src="src/app.js"></script>
+  <div class="footer">
+    <strong><a href="https://github.com/rjoy-deligero/vanilla-weather-app" target="_blank">Open-source code</a> by Joy
+      Deligero and is Hosted on <a href="https://zesty-zuccutto-4140f2.netlify.app/" target="_blank">Netlify</a></strong>
+  </div>
 </body>
-    <div class="footer">
-      <small><a href="https://github.com/rjoy-deligero/vanilla-weather-app" target="_blank">Open-source code</a> by Joy
-        Deligero Hosted on <a href="https://zesty-zuccutto-4140f2.netlify.app/" target="_blank">Netlilfy</a></small>
-    </div>
+
 </html>
